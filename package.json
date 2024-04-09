@@ -15,9 +15,6 @@
     "build_bootstrap": "gulp build_bootstrap",
     "test_js": "eslint -c ./.eslintrc.json --max-warnings 100 --ext .js ./dist"
   },
-  "dependencies": {
-
-  },
   "devDependencies": {
     "gulp": "5.0.0",
     "gulp-concat": "2.6.1",
@@ -47,7 +44,7 @@
     "breadcrumb"
   ],
   "author": "n2ref",
-  "license": "GPL-3.0-only",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/n2ref/coreui-breadcrumb/issues"
   },

@@ -1,0 +1,8 @@
+
+.coreui-breadcrumb {
+
+    .breadcrumb-item a {
+        text-decoration: $coreui-breadcrumb-item-link-text-decoration;
+        color:           $coreui-breadcrumb-item-link-color;
+    }
+}

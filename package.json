@@ -47,7 +47,7 @@
     "breadcrumb"
   ],
   "author": "n2ref",
-  "license": "GPL-3.0-only",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/n2ref/coreui-breadcrumb/issues"
   },

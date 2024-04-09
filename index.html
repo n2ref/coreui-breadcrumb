@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html id="page-content">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreUI Breadcrumb</title>
+
+    <link href="dist/page.min.css" rel="stylesheet"/>
+    <script src="dist/page.min.js"></script>
+
+    <link href="dist/coreui-breadcrumb.min.css" rel="stylesheet"/>
+    <script src="dist/coreui-breadcrumb.min.js"></script>
+
+    <script src="src/js/examples.js"></script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#docs-sidenav">
+
+<section class="text-left">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <header>
+                    <nav class="navbar navbar-expand-lg navbar-default">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">CoreUI</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-panel">Panel</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-form">Form</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-tabs">Tabs</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-layout">Layout</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-table">Table</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-info">Info</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-modal">Modal</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-notice">Notice</a></li>
+                                    <li class="nav-item"><span class="nav-link active">Breadcrumb</span></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-alert">Alert</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-chart">Chart</a></li>
+                                </ul>
+
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="nav-item"><a class="nav-link" href="https://github.com/n2ref/coreui-breadcrumb">GitHub</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+            <div class="col-lg-2">
+                <div id="docs-sidenav" class="hidden-xs hidden-sm hidden-md d-none d-lg-block"
+                     data-bs-spy="affix" data-bs-offset-top="90" data-bs-offset-bottom="70">
+                    <ul class="nav">
+                        <li><a href="#download">Download</a></li>
+                        <li>
+                            <a href="#examples">Examples</a>
+                            <ul class="nav">
+                                <li><a href="#example-simple">Simple</a></li>
+                                <li><a href="#example-divider">Divider</a></li>
+                                <li><a href="#example-divider-svg">Divider svg</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#options">Options</a></li>
+                        <li><a href="#methods">Methods</a></li>
+                        <li><a href="#sass-variables">Sass variables</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <h2 id="download">Download</h2>
+                <div>
+                    <p>
+                        You can download a minimized version of the library or get the full source code at github.com.
+                    </p>
+                    <a class="btn btn-secondary" href="https://github.com/n2ref/coreui-breadcrumb/archive/master.zip">Download source</a>
+                </div>
+
+
+                <h2 class="section-margin">Install with npm</h2>
+                <pre><code class="bash">$ npm install coreui-breadcrumb</code></pre>
+
+
+                <h2 class="section-margin">Требования</h2>
+                <p>
+                    Для корректной работы на странице необходимо наличие:
+                    <a href="https://getbootstrap.com/docs/5.3" target="_blank">Bootstrap 5</a>,
+                    <a href="https://jquery.com" target="_blank">jquery</a>
+                </p>
+
+                <h2 id="examples" class="section-margin mb-3">Examples</h2>
+                <div>
+
+                    <div>
+                        <h5 id="example-simple">Simple</h5>
+                        <div class="mb-5">
+                            <div class="content-example">
+                                <div id="breadcrumb-simple"></div>
+                            </div>
+                            <div class="content-markup">
+                                    <pre><code class="html">
+    &lt;div id="breadcrumb-simple"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        CoreUI.breadcrumb.create({
+            items: [
+                { text: 'Home', url: '#' },
+                { text: 'Library', url: '#' },
+                { text: 'Data' },
+            ]
+        }).render('breadcrumb-simple');
+    &lt;/script&gt;
+                                    </code></pre>
+                            </div>
+                        </div>
+
+
+                        <h5 id="example-divider">Divider</h5>
+                        <div class="mb-5">
+                            <div class="content-example">
+                                <div id="breadcrumb-divider"></div>
+                            </div>
+                            <div class="content-markup">
+                                    <pre><code class="html">
+    &lt;div id="breadcrumb-divider"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        CoreUI.breadcrumb.create({
+            divider: '&gt;',
+            items: [
+                { text: 'Home', url: '#' },
+                { text: 'Library', url: '#' },
+                { text: 'Data' },
+            ]
+        }).render('breadcrumb-divider');
+    &lt;/script&gt;
+                                    </code></pre>
+                            </div>
+                        </div>
+
+
+                        <h5 id="example-divider-svg">Divider svg</h5>
+                        <div class="mb-5">
+                            <div class="content-example">
+                                <div id="breadcrumb-divider-svg"></div>
+                            </div>
+                            <div class="content-markup">
+                                    <pre><code class="html">
+    &lt;div id="breadcrumb-divider-svg"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        CoreUI.breadcrumb.create({
+            divider: 'url(&#34;data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'8\' height=\'8\'%3E%3Cpath d=\'M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z\' fill=\'%236c757d\'/%3E%3C/svg%3E&#34;)',
+            items: [
+                { text: 'Home', url: '#' },
+                { text: 'Library', url: '#' },
+                { text: 'Data' },
+            ]
+        }).render('breadcrumb-divider-svg');
+    &lt;/script&gt;
+                                    </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <h2 id="options" class="section-margin">Options</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered table-striped js-options-table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>type</th>
+                            <th>default</th>
+                            <th>description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>id</th> <td>string</td> <td><code>crc32b</code></td>
+                            <td>Идентификатор</td>
+                        </tr>
+                        <tr>
+                            <th>divider</th> <td>string</td> <td></td>
+                            <td>Разделитель элементов</td>
+                        </tr>
+                        <tr>
+                            <th>items</th> <td>array</td> <td></td>
+                            <td>Список элементов. Пример элемента <code>{ text: "lite title", url: "#" }</code> </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <h2 id="methods" class="section-margin">Methods</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered table-striped js-options-table">
+                        <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Return</th>
+                            <th style="width: 50%">Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                let breadcrumb = CoreUI.breadcrumb.create( options )
+                            </td>
+                            <td>object</td>
+                            <td>Метод для создания экземпляра навигации</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                let breadcrumb = CoreUI.breadcrumb.get( id )
+                            </td>
+                            <td>object</td>
+                            <td>Получение ранее созданного экземпляра навигации</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                CoreUI.breadcrumb.setSettings( settings )
+                            </td>
+                            <td></td>
+                            <td>
+                                Установка некоторых настроек по умолчанию
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                CoreUI.breadcrumb.getSetting( name )
+                            </td>
+                            <td>mixed</td>
+                            <td>
+                                Получение значения установленной настройки по умолчанию
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                breadcrumb.render( elementId )
+                            </td>
+                            <td>string | void</td>
+                            <td>
+                                Формирование html навигации и размещение его если указан dom элемент.
+                                Если элемент не указан, то метод возвращает сформированный html
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                breadcrumb.getId()
+                            </td>
+                            <td>string | null</td>
+                            <td>
+                                Получение id навигации
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                breadcrumb.getOptions()
+                            </td>
+                            <td>object</td>
+                            <td>
+                                Получение параметров навигации
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <h2 id="sass-variables" class="section-margin">Sass variables</h2>
+                <div class="mb-4">
+                    <div class="content-markup">
+                            <pre><code>
+    $coreui-breadcrumb-item-link-text-decoration: underline;
+    $coreui-breadcrumb-item-link-color:           $blue;
+                            </code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buffer-content"></div>
+</section>
+
+<footer>
+    <section class="copyright">
+        <div class="container">
+            <span class="float-start"></span>
+            <span class="float-end">Code licensed under the GNU License</span>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+</footer>
+</body>
+</html>
+

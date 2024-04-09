@@ -1,6 +1,6 @@
 {
   "name": "coreui-breadcrumb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CoreUI Breadcrumb",
   "scripts": {
     "build_all": "gulp build_js_min && gulp build_js && npm run test_js",

@@ -5,4 +5,8 @@
         text-decoration: $coreui-breadcrumb-item-link-text-decoration;
         color:           $coreui-breadcrumb-item-link-color;
     }
+    .breadcrumb-item a:hover {
+        text-decoration: $coreui-breadcrumb-item-link-hover-text-decoration;
+        color:           $coreui-breadcrumb-item-link-hover-color;
+    }
 }

@@ -1,3 +1,9 @@
 
-$coreui-breadcrumb-item-link-text-decoration: underline;
-$coreui-breadcrumb-item-link-color:           $blue;
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$coreui-breadcrumb-item-link-text-decoration: $link-decoration;
+$coreui-breadcrumb-item-link-color:           $link-color;
+
+$coreui-breadcrumb-item-link-hover-text-decoration: $link-hover-decoration;
+$coreui-breadcrumb-item-link-hover-color:           $link-hover-color;

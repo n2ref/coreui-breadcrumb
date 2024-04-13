@@ -1,6 +1,6 @@
 {
   "name": "coreui-breadcrumb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CoreUI Breadcrumb",
   "scripts": {
     "build_all": "gulp build_js_min && gulp build_js && npm run test_js",
@@ -20,7 +20,6 @@
     "gulp-concat": "2.6.1",
     "gulp-sourcemaps": "3.0.0",
     "gulp-uglify": "3.0.2",
-    "gulp-babel": "8.0.0",
     "gulp-sass": "5.1.0",
     "@rollup/stream": "3.0.1",
     "rollup-plugin-sourcemaps": "0.6.3",
@@ -44,7 +43,7 @@
     "breadcrumb"
   ],
   "author": "n2ref",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/n2ref/coreui-breadcrumb/issues"
   },

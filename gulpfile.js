@@ -2,7 +2,6 @@ const gulp             = require('gulp');
 const concat           = require('gulp-concat');
 const sourcemaps       = require('gulp-sourcemaps');
 const uglify           = require('gulp-uglify');
-const babel            = require("gulp-babel");
 const sass             = require('gulp-sass')(require('sass'));
 const rollup           = require('@rollup/stream');
 const rollupSourcemaps = require('rollup-plugin-sourcemaps');
@@ -30,7 +29,7 @@ var conf = {
     },
     css_bootstrap: {
         fileMin: 'coreui-breadcrumb.bootstrap.min.css',
-        main: 'src/css/coreui.panel.bootstrap.scss',
+        main: 'src/css/coreui.breadcrumb.bootstrap.scss',
     }
 };
 

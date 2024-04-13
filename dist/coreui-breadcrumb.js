@@ -66,9 +66,7 @@
      */
     _init: function _init(options) {
       this._options = $.extend(true, {}, this._options, options);
-      if (!this._options.id) {
-        this._id = coreuiBreadcrumbUtils.hashCode();
-      }
+      this._id = this._options.hasOwnProperty('id') && typeof this._options.id === 'string' && this._options.id ? this._options.id : coreuiBreadcrumbUtils.hashCode();
     },
     /**
      * Формирование html компонента
@@ -146,7 +144,7 @@
       if (!options.hasOwnProperty('divider')) {
         options.divider = coreuiBreadcrumb.getSetting('divider');
       }
-      instance._init(options instanceof Object ? options : {});
+      instance._init(coreuiBreadcrumbUtils.isObject(options) ? options : {});
       var id = instance.getId();
       this._instances[id] = instance;
       return instance;
@@ -160,7 +158,7 @@
       if (!this._instances.hasOwnProperty(id)) {
         return null;
       }
-      if ($('#coreui-breadcrumb-' + id)[0]) {
+      if (!$('#coreui-breadcrumb-' + id)[0]) {
         delete this._instances[id];
         return null;
       }

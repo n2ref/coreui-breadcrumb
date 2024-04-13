@@ -1,5 +1,6 @@
 
 import coreuiBreadcrumbInstance from './coreui.breadcrumb.instance';
+import coreuiBreadcrumbUtils from "./coreui.breadcrumb.utils";
 
 let coreuiBreadcrumb = {
 
@@ -21,7 +22,7 @@ let coreuiBreadcrumb = {
             options.divider = coreuiBreadcrumb.getSetting('divider');
         }
 
-        instance._init(options instanceof Object ? options : {});
+        instance._init(coreuiBreadcrumbUtils.isObject(options) ? options : {});
 
         let id = instance.getId();
         this._instances[id] = instance;
@@ -41,7 +42,7 @@ let coreuiBreadcrumb = {
             return null;
         }
 
-        if ($('#coreui-breadcrumb-' + id)[0]) {
+        if ( ! $('#coreui-breadcrumb-' + id)[0]) {
             delete this._instances[id];
             return null;
         }

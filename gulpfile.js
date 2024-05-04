@@ -37,7 +37,7 @@ var conf = {
 gulp.task('build_css_min', function(){
     return gulp.src(conf.css.main)
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sass({includePaths: ['node_modules'], outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(concat(conf.css.fileMin))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(conf.dist));
@@ -45,14 +45,14 @@ gulp.task('build_css_min', function(){
 
 gulp.task('build_css_min_fast', function(){
     return gulp.src(conf.css.main)
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({includePaths: ['node_modules']}).on('error', sass.logError))
         .pipe(concat(conf.css.fileMin))
         .pipe(gulp.dest(conf.dist));
 });
 
 gulp.task('build_css', function(){
     return gulp.src(conf.css.main)
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({includePaths: ['node_modules']}).on('error', sass.logError))
         .pipe(concat(conf.css.file))
         .pipe(gulp.dest(conf.dist));
 });
@@ -121,7 +121,7 @@ gulp.task('build_js_min', function() {
 gulp.task('build_bootstrap', function() {
     return gulp.src(conf.css_bootstrap.main)
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sass({includePaths: ['node_modules'], outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(concat(conf.css_bootstrap.fileMin))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(conf.dist));

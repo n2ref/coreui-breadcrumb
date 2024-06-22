@@ -31,9 +31,8 @@
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-panel">Panel</a></li>
                                     <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-form">Form</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-tabs">Tabs</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-layout">Layout</a></li>
                                     <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-table">Table</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-layout">Layout</a></li>
                                     <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-info">Info</a></li>
                                     <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-modal">Modal</a></li>
                                     <li class="nav-item"><a class="nav-link" href="https://n2ref.github.io/coreui-notice">Notice</a></li>
@@ -54,7 +53,7 @@
                 <div id="docs-sidenav" class="hidden-xs hidden-sm hidden-md d-none d-lg-block"
                      data-bs-spy="affix" data-bs-offset-top="90" data-bs-offset-bottom="70">
                     <ul class="nav">
-                        <li><a href="#download">Download</a></li>
+                        <li><a href="#get-started">Get started</a></li>
                         <li>
                             <a href="#examples">Examples</a>
                             <ul class="nav">
@@ -70,32 +69,36 @@
                 </div>
             </div>
             <div class="col-lg-10">
-                <h2 id="download">Download</h2>
-                <div>
+                <div id="get-started">
+                    <h2 class="mb-4">Get started</h2>
+
+                    <div id="download">
+                        <h4>Download</h4>
+                        <p>
+                            You can download a minimized version of the library or get the full source code at github.com.
+                        </p>
+                        <a class="btn btn-secondary" href="https://github.com/n2ref/coreui-breadcrumb/archive/master.zip">Download source</a>
+                    </div>
+
+
+                    <h4 class="section-margin">Install with npm</h4>
+                    <pre><code class="bash">$ npm install coreui-breadcrumb</code></pre>
+
+
+                    <h4 class="section-margin">Требования</h4>
                     <p>
-                        You can download a minimized version of the library or get the full source code at github.com.
+                        Для корректной работы на странице необходимо наличие:
+                        <a href="https://getbootstrap.com/docs/5.3" target="_blank">Bootstrap 5</a>,
+                        <a href="https://jquery.com" target="_blank">jquery</a>
                     </p>
-                    <a class="btn btn-secondary" href="https://github.com/n2ref/coreui-breadcrumb/archive/master.zip">Download source</a>
                 </div>
 
-
-                <h2 class="section-margin">Install with npm</h2>
-                <pre><code class="bash">$ npm install coreui-breadcrumb</code></pre>
-
-
-                <h2 class="section-margin">Требования</h2>
-                <p>
-                    Для корректной работы на странице необходимо наличие:
-                    <a href="https://getbootstrap.com/docs/5.3" target="_blank">Bootstrap 5</a>,
-                    <a href="https://jquery.com" target="_blank">jquery</a>
-                </p>
-
-                <h2 id="examples" class="section-margin mb-3">Examples</h2>
-                <div>
+                <div id="examples">
+                    <h2 class="section-margin mb-3">Examples</h2>
 
                     <div>
-                        <h5 id="example-simple">Simple</h5>
-                        <div class="mb-5">
+                        <div id="example-simple" class="mb-5">
+                            <h5>Simple</h5>
                             <div class="content-example">
                                 <div id="breadcrumb-simple"></div>
                             </div>
@@ -117,8 +120,8 @@
                         </div>
 
 
-                        <h5 id="example-divider">Divider</h5>
-                        <div class="mb-5">
+                        <div id="example-divider" class="mb-5">
+                            <h5>Divider</h5>
                             <div class="content-example">
                                 <div id="breadcrumb-divider"></div>
                             </div>
@@ -141,8 +144,8 @@
                         </div>
 
 
-                        <h5 id="example-divider-svg">Divider svg</h5>
-                        <div class="mb-5">
+                        <div id="example-divider-svg" class="mb-5">
+                            <h5>Divider svg</h5>
                             <div class="content-example">
                                 <div id="breadcrumb-divider-svg"></div>
                             </div>
@@ -168,8 +171,8 @@
                 </div>
 
 
-                <h2 id="options" class="section-margin">Options</h2>
-                <div class="table-responsive mb-4">
+                <div id="options" class="table-responsive mb-4">
+                    <h2 class="section-margin">Options</h2>
                     <table class="table table-bordered table-striped js-options-table">
                         <thead>
                         <tr>
@@ -197,8 +200,8 @@
                 </div>
 
 
-                <h2 id="methods" class="section-margin">Methods</h2>
-                <div class="table-responsive mb-4">
+                <div id="methods" class="table-responsive mb-4">
+                    <h2 class="section-margin">Methods</h2>
                     <table class="table table-bordered table-striped js-options-table">
                         <thead>
                         <tr>
@@ -273,8 +276,8 @@
                 </div>
 
 
-                <h2 id="sass-variables" class="section-margin">Sass variables</h2>
-                <div class="mb-4">
+                <div id="sass-variables" class="mb-4">
+                    <h2 class="section-margin">Sass variables</h2>
                     <div class="content-markup">
                             <pre><code>
     $coreui-breadcrumb-item-link-text-decoration: $link-decoration;

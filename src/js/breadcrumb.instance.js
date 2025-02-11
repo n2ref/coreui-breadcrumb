@@ -1,18 +1,18 @@
 
-import coreuiBreadcrumbUtils from './coreui.breadcrumb.utils';
+import BreadcrumbUtils from './breadcrumb.utils';
 
 
-let coreuiBreadcrumbInstance = {
+class BreadcrumbInstance {
 
-    _id: null,
+    _id = null;
 
-    _options: {
+    _options = {
         id: null,
         options: {
             divider: null,
             items: []
         }
-    },
+    };
 
 
     /**
@@ -20,13 +20,13 @@ let coreuiBreadcrumbInstance = {
      * @param {object} options
      * @private
      */
-    _init: function (options) {
+    constructor(options) {
 
         this._options = $.extend(true, {}, this._options, options);
         this._id      = this._options.hasOwnProperty('id') && typeof this._options.id === 'string' && this._options.id
             ? this._options.id
-            : coreuiBreadcrumbUtils.hashCode();
-    },
+            : BreadcrumbUtils.hashCode();
+    }
 
 
     /**
@@ -34,7 +34,7 @@ let coreuiBreadcrumbInstance = {
      * @param {jQuery|HTMLElement|string} element
      * @return {string|*|string|Promise<void>}
      */
-    render: function(element) {
+    render(element) {
 
         let that    = this;
         let items   = [];
@@ -52,7 +52,7 @@ let coreuiBreadcrumbInstance = {
         if (Array.isArray(this._options.items)) {
             $.each(this._options.items, function (key, item) {
 
-                if (coreuiBreadcrumbUtils.isObject(item) &&
+                if (BreadcrumbUtils.isObject(item) &&
                     item.hasOwnProperty('text') &&
                     typeof item.text === 'string'
                 ) {
@@ -97,35 +97,35 @@ let coreuiBreadcrumbInstance = {
         if (domElement) {
             $(domElement).append(container);
         }
-    },
+    }
 
 
     /**
      * Инициализация событий компонента
      */
-    initEvents: function () {
+    initEvents() {
 
-    },
+    }
 
 
     /**
      * Получение id графика
      * @return {string|null}
      */
-    getId: function () {
+    getId() {
 
         return this._id;
-    },
+    }
 
 
     /**
      * Получение параметров
      * @returns {object}
      */
-    getOptions: function () {
+    getOptions() {
 
         return $.extend(true, {}, this._options);
     }
 }
 
-export default coreuiBreadcrumbInstance;
+export default BreadcrumbInstance;

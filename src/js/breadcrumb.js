@@ -1,8 +1,8 @@
 
-import coreuiBreadcrumbInstance from './coreui.breadcrumb.instance';
-import coreuiBreadcrumbUtils from "./coreui.breadcrumb.utils";
+import BreadcrumbUtils    from "./breadcrumb.utils";
+import BreadcrumbInstance from "./breadcrumb.instance";
 
-let coreuiBreadcrumb = {
+let Breadcrumb = {
 
     _instances: {},
     _settings: {
@@ -16,13 +16,12 @@ let coreuiBreadcrumb = {
      * @returns {object}
      */
     create: function (options) {
-        let instance = $.extend(true, {}, coreuiBreadcrumbInstance);
 
         if ( ! options.hasOwnProperty('divider')) {
-            options.divider = coreuiBreadcrumb.getSetting('divider');
+            options.divider = Breadcrumb.getSetting('divider');
         }
 
-        instance._init(coreuiBreadcrumbUtils.isObject(options) ? options : {});
+        let instance = new BreadcrumbInstance(BreadcrumbUtils.isObject(options) ? options : {});
 
         let id = instance.getId();
         this._instances[id] = instance;
@@ -78,4 +77,4 @@ let coreuiBreadcrumb = {
 }
 
 
-export default coreuiBreadcrumb;
+export default Breadcrumb;

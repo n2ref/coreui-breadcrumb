@@ -1,5 +1,5 @@
 
-let coreuiBreadcrumbUtils = {
+let BreadcrumbUtils = {
 
 
     /**
@@ -47,4 +47,4 @@ let coreuiBreadcrumbUtils = {
     }
 }
 
-export default coreuiBreadcrumbUtils;
+export default BreadcrumbUtils;

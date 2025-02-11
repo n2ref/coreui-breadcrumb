@@ -16,13 +16,13 @@ var conf = {
     js: {
         fileMin: 'coreui-breadcrumb.min.js',
         file: 'coreui-breadcrumb.js',
-        main: 'src/js/main.js',
+        main: 'src/main.js',
         src: 'src/js/**/*.js'
     },
     css: {
         fileMin: 'coreui-breadcrumb.min.css',
         file: 'coreui-breadcrumb.css',
-        main: 'src/css/main.scss',
+        main: 'src/main.scss',
         src: [
             'src/css/*.scss',
         ]
@@ -112,7 +112,11 @@ gulp.task('build_js_min', function() {
         .pipe(source(conf.js.fileMin))
         .pipe(buffer())
         .pipe(sourcemaps.init())
-        .pipe(uglify())
+        .pipe(uglify({
+            mangle: {
+                reserved: ['BreadcrumbInstance']
+            }
+        }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(conf.dist));
 });

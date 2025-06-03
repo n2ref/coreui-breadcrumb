@@ -1,5 +1,5 @@
 
-let BreadcrumbUtils = {
+let Utils = {
 
 
     /**
@@ -47,4 +47,4 @@ let BreadcrumbUtils = {
     }
 }
 
-export default BreadcrumbUtils;
+export default Utils;

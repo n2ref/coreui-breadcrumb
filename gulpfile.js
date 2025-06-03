@@ -15,13 +15,11 @@ var conf = {
     dist: "./dist",
     js: {
         fileMin: 'coreui-breadcrumb.min.js',
-        file: 'coreui-breadcrumb.js',
         main: 'src/main.js',
         src: 'src/js/**/*.js'
     },
     css: {
         fileMin: 'coreui-breadcrumb.min.css',
-        file: 'coreui-breadcrumb.css',
         main: 'src/main.scss',
         src: [
             'src/css/*.scss',
@@ -34,7 +32,7 @@ var conf = {
 };
 
 
-gulp.task('build_css_min', function(){
+gulp.task('build_css', function(){
     return gulp.src(conf.css.main)
         .pipe(sourcemaps.init())
         .pipe(sass({includePaths: ['node_modules'], outputStyle: 'compressed'}).on('error', sass.logError))
@@ -43,39 +41,14 @@ gulp.task('build_css_min', function(){
         .pipe(gulp.dest(conf.dist));
 });
 
-gulp.task('build_css_min_fast', function(){
+gulp.task('build_css_fast', function(){
     return gulp.src(conf.css.main)
         .pipe(sass({includePaths: ['node_modules']}).on('error', sass.logError))
         .pipe(concat(conf.css.fileMin))
         .pipe(gulp.dest(conf.dist));
 });
 
-gulp.task('build_css', function(){
-    return gulp.src(conf.css.main)
-        .pipe(sass({includePaths: ['node_modules']}).on('error', sass.logError))
-        .pipe(concat(conf.css.file))
-        .pipe(gulp.dest(conf.dist));
-});
-
-gulp.task('build_js', function() {
-    return rollup({
-        input: conf.js.main,
-        output: {
-            sourcemap: false,
-            format: 'umd',
-            name: "CoreUI.breadcrumb"
-        },
-        context: "window",
-        plugins: [
-            rollupBabel({babelHelpers: 'bundled'}),
-        ]
-    })
-        .pipe(source(conf.js.file))
-        .pipe(buffer())
-        .pipe(gulp.dest(conf.dist));
-});
-
-gulp.task('build_js_min_fast', function() {
+gulp.task('build_js_fast', function() {
     return rollup({
         input: conf.js.main,
         output: {
@@ -95,7 +68,7 @@ gulp.task('build_js_min_fast', function() {
 });
 
 
-gulp.task('build_js_min', function() {
+gulp.task('build_js', function() {
     return rollup({
         input: conf.js.main,
         output: {
@@ -133,7 +106,7 @@ gulp.task('build_bootstrap', function() {
 
 
 gulp.task('build_watch', function() {
-    gulp.watch(conf.js.src, gulp.parallel(['build_js_min_fast']));
+    gulp.watch(conf.js.src, gulp.parallel(['build_js_fast']));
 });
 
-gulp.task("default", gulp.series([ 'build_js_min', 'build_js' ]));
+gulp.task("default", gulp.series([ 'build_css', 'build_js' ]));

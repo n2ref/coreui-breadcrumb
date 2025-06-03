@@ -1,6 +1,6 @@
 
 
-import Breadcrumb from "./js/breadcrumb";
+import Controller from "./js/controller";
 
 
-export default Breadcrumb;
+export default Controller;
